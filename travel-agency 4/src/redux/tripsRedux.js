@@ -1,5 +1,7 @@
 /* SELECTORS */
 
+//komentarz do testowania commita
+
 export const getAllTrips = ({trips}) => trips;
 
 export const getFilteredTrips = ({trips, filters}) => {
@@ -21,9 +23,12 @@ export const getFilteredTrips = ({trips, filters}) => {
 };
 
 export const getTripById = ({trips}, tripId) => {
-  const filtered = trips;
+  // const filtered = trips;
+  const filtered = trips.filter(trip => trip.tripId == tripId);
+
 
   // TODO - filter trips by tripId
+  // export const getColumnsForList = ({columns}, listId) => columns.filter(column => column.listId == listId);
 
   console.log('filtering trips by tripId:', tripId, filtered);
   return filtered.length ? filtered[0] : {error: true};

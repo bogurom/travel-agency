@@ -9,16 +9,32 @@ class TripListOptions extends React.Component {
     if(checked) {
       console.log('Adding tag', tag);
       // TODO - use action dispatcher from props
+      this.props.changeTags(tag);
     } else {
       console.log('Removing tag', tag);
       // TODO - use action dispatcher from props
+      this.props.changeTags(tag);
     }
   }
 
   handleDuration(type, value){
-    console.log('Changing duration', type, value);
-    // TODO - use action dispatcher from props
+    if(type == "from") {
+      console.log('Changing duration', type, value);
+      this.props.changeDuration(type, value);
+    } else if(type == "to") {
+      // console.log("test");
+      console.log('Changing duration', type, value);
+      this.props.changeDuration(type, value);
+    }
   }
+
+
+
+  // handleDuration(type, value){
+  //   console.log('Changing duration', type, value);
+  //   // TODO - use action dispatcher from props
+  //   this.props.changeDuration(type, value);
+  // }
 
   handleSearch(phrase){
     this.props.changeSearchPhrase(phrase);
